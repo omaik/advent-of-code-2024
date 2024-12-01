@@ -6,16 +6,16 @@ module Day1
 
     def call1
       left, right = input
-      left.zip(right).map do |l, r|
+      left.zip(right).sum do |l, r|
         (l - r).abs
-      end.sum
+      end
     end
 
     def call2
       left, right = input
-      left.map do |l|
+      left.sum do |l|
         right.count(l) * l
-      end.sum
+      end
     end
 
     def input
