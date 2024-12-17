@@ -5,7 +5,12 @@ module Day15
       SAMPLE_INPUT_FILE_PATH = "#{__dir__}/input.sample.txt".freeze
 
       def call(sample)
-        data(sample).split("\n")
+        map, moves = data(sample).split("\n\n")
+
+        map = map.split("\n").map { |line| line.split('') }
+        moves = moves.split('').compact_blank
+
+        [map, moves]
       end
 
       def data(sample)
