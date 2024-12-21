@@ -35,7 +35,7 @@ module Day14
 
     def print_canvas(steps)
       positions = input.map { |robot| robot.position(*space, steps) }
-      size = positions.map(&:first).group_by(&:itself).transform_values(&:size).values.max
+      positions.map(&:first).group_by(&:itself).transform_values(&:size).values.max
       # return if size < 5
       # return
 
